@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<style>
+ 
+</style>
+<body>
+	{% block content %}
+    <h1>Required Data</h1>
+    <ul>
+        {% for publisher in object_list %}  <!--ye object_list#default hai   ko iterate karega-->
+            <li>{{ publisher.email }}</li>  <!-- email jo model ka naam me jisme data feed kiya hai vo-->
+            <li>{{ publisher.password }}</li>
+        {% endfor %}
+    </ul>
+
+    <table align="center">
+
+        <col width="130">
+        <tr>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+        </tr>
+        {% for publisher in object_list %}
+            <tr>
+                
+                    <td>{{publisher.email}}</td>
+                    <td>{{publisher.password}}</td>
+             
+            </tr>
+        {% endfor %}
+    </table>
+
+
+	{% endblock %}
+</body>
+</html>
+<!-- if you have to reload the static then ctrl+shift+r. --!>
