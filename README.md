@@ -1,2 +1,2 @@
 # django_pratice
-This repo is just for pratice!!
+This repo is just for pratice!!!
